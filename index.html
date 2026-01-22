@@ -38,11 +38,10 @@ db.createObjectStore('dat', { autoIncrement: true });
           }
 request.onsuccess = event => 
          {
-         alert("baza req");
          const db = event.target.result; 
  const transaction = db.transaction('dat', 'readwrite');
 const store = transaction.objectStore('dat');
-alert("baza q");
+alert("trans");
 const getAllRequest = store.getAll();
                   
   getAllRequest.onsuccess = () =>
