@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <!--  <script  defer></script><!--  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page title</title>
+</head>
+<body>
+    <h1 >датаa </h1>
+    
+    <button>зарегить</button>
+    <div></div>
+    <button style="display:none" >вторай</button>
+    <p></p>
+    </body>
+    </html>
+    <!-- <script src="db.js"> -->
+        <script>
+            
+            const h1 =document.querySelector("h1");
+ const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+const today = new Date();
+const rut = today.toLocaleDateString('ru-RU', options);
+h1.textContent = rut;
+         
+const button =document.querySelector("button:nth-of-type(1)");
+const button2=document.querySelector("button:nth-of-type(2)");
+const table  =document.querySelector("p")
+
+   const request = indexedDB.open('MyDatabse', 1);
+   
+request.onupgradeneeded = event => 
+         {
+         alert("bazaq");
+const db = event.target.result; 
+let vbv = db.createObjectStore('dat', { autoIncrement: true });
+  alert("создана новая база");
+          }
+request.onsuccess = event => 
+         {
+         alert("baza req");
+         const db = event.target.result; 
+ const transaction = db.transaction('dat', 'readwrite');
+const store = transaction.objectStore('dat');
+alert("baza q");
+const getAllRequest = store.getAll();
+                  
+  getAllRequest.onsuccess = () =>
+               {
+      const allRecords = getAllRequest.result ;
+table.style.background = "PaleGreen";
+let list = '<ul>';
+for (let i = 0; i < allRecords.length; i++) {
+            const vvalue =allRecords[i] ;
+            list += `<li><strong>${vvalue}</strong></li>`;
+                        }
+        list += '</ul>';
+        table.innerHTML = list;
+                }
+          }
+          
+button.addEventListener('click',()=> 
+     {
+       h1.textContent =`вы уверены?`;
+              document.querySelector("div").style.height = "200px";
+              document.querySelector("div").style.background = "maroon";
+              document.querySelector("div").style.marginBottom = "40px";
+ button.remove();
+button2.textContent =`дааа!, ,${rut}`;
+button2.style.display ="";
+        }
+                        );
+            
+            
+button2.addEventListener('click',()=>     {
+button2.remove();
+h1.textContent=" ошибка аааа";
+  const transaction = db.transaction('dat', 'readwrite');
+  const store = transaction.objectStore('dat');
+  store.add(rut);
+  const getAllRequest = store.getAll();
+                  
+  
+  getAllRequest.onsuccess = () =>
+       {
+      const allRecords = getAllRequest.result;
+h1.textContent =`УсПех !!`;
+document.querySelector("div").style.background = "PaleGreen";
+let list = '<ul>';
+        for (let i = 0; i < allRecords.length; i++) {
+            const vvalue =allRecords[i] ;
+            list += `<li><strong>${vvalue}</strong></li>`;
+                        }
+        list += '</ul>';
+        document.querySelector("div").innerHTML = list;
+        }
+       
+        
+                }          );
+
+        </script>
+
+</body>
+</html>
