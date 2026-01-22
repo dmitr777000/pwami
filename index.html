@@ -41,9 +41,9 @@ request.onsuccess = event =>
          const db = event.target.result; 
  const transaction = db.transaction('dat', 'readwrite');
 const store = transaction.objectStore('dat');
-alert("trans");
+
 const getAllRequest = store.getAll();
-                  
+              alert("getall");    
   getAllRequest.onsuccess = () =>
                {
       const allRecords = getAllRequest.result ;
