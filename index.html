@@ -23,7 +23,7 @@
 const today = new Date();
 const rut = today.toLocaleDateString('ru-RU', options);
 h1.textContent = rut;
-         
+ const divv  =document.querySelector("div");
 const button =document.querySelector("button:nth-of-type(1)");
 const button2=document.querySelector("button:nth-of-type(2)");
 const table  =document.querySelector("p")
@@ -65,9 +65,9 @@ button.addEventListener('click',()=>
      {
          table.remove();
        h1.textContent =`вы уверены?`;
-              document.querySelector("div").style.height = "200px";
+              divv.style.height = "200px";
               document.querySelector("div").style.background = "maroon";
-              document.querySelector("div").style.marginBottom = "40px";
+              divv.style.marginBottom = "40px";
  button.remove();
 button2.textContent =`дааа!, ,${rut}`;
 button2.style.display ="";
@@ -77,7 +77,7 @@ button2.style.display ="";
             
 button2.addEventListener('click',()=>     
     {
-    
+divv.style.height = "";
 button2.remove();
 h1.textContent=" ошибка аааа";
 
