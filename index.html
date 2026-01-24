@@ -11,7 +11,7 @@
     </div><
     <h1 >датаa </h1>
     <
-    <button>зарегить</button>
+    <button id="zarg" >зарегить</button>
     <div></div>
     <button style="display:none" >вторай</button>
     <p></p>
@@ -25,8 +25,8 @@ const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric
 const today = new Date();
 const rut = today.toLocaleDateString('ru-RU', options);
 const divv  =document.querySelector("div");
-const button =document.querySelector("button:nth-of-type(1)");
-const button2=document.querySelector("button:nth-of-type(2)");
+const button =document.getElementById('zarg')
+const button2=document.querySelector("button:nth-of-type(3)");
 const table  =document.querySelector("p")
             h1.textContent = rut;
 
