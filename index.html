@@ -8,9 +8,8 @@
 </head>
 <body>
     <div style="margin-left: auto"> <button >заново</button>
-    </div><
+    </div>
     <h1 >датаa </h1>
-    <
     <button id="zarg" >зарегить</button>
     <div></div>
     <button style="display:none" >вторай</button>
@@ -24,7 +23,7 @@ const h1 =document.querySelector("h1");
 const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
 const today = new Date();
 const rut = today.toLocaleDateString('ru-RU', options);
-const divv  =document.querySelector("div");
+const divv  =document.querySelector("button:nth-of-type(2)");
 const button =document.getElementById('zarg')
 const button2=document.querySelector("button:nth-of-type(3)");
 const table  =document.querySelector("p")
