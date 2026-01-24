@@ -12,7 +12,7 @@
     <h1 >датаa </h1>
     <button id="zarg" >зарегить</button>
     <div></div>
-    <button style="display:none" >вторай</button>
+    <button id="da" style="display:none" >вторай</button>
     <p></p>
     </body>
     </html>
@@ -25,7 +25,7 @@ const today = new Date();
 const rut = today.toLocaleDateString('ru-RU', options);
 const divv  =document.querySelector("button:nth-of-type(2)");
 const button =document.getElementById('zarg')
-const button2=document.querySelector("button:nth-of-type(3)");
+const button2=document.getElementById("da");
 const table  =document.querySelector("p")
             h1.textContent = rut;
 
