@@ -29,7 +29,7 @@ const button2=document.getElementById("da");
 const table  =document.querySelector("p")
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/6sw.js')  // Путь к файлу SW
+    navigator.serviceWorker.register('/sw.js')  // Путь к файлу SW
       .then(registration => {
         console.log('Service Worker зарегистрирован успешно:', registration.scope);
       })
