@@ -27,6 +27,17 @@ const tabl2  =document.getElementById("tablel");
 const button =document.getElementById('zarg')
 const button2=document.getElementById("da");
 const table  =document.querySelector("p")
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')  // Путь к файлу SW
+      .then(registration => {
+        console.log('Service Worker зарегистрирован успешно:', registration.scope);
+      })
+      .catch(error => {
+        console.error('Ошибка регистрации Service Worker:', error);
+      });
+  });
+}
             h1.textContent = rut;
 
  const request = indexedDB.open('MyDatabse', 1);
