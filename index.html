@@ -39,6 +39,8 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+      navigator.serviceWorker.addEventListener('message', event => console.log('Новый SW активирован));
+    // Можно показать уведомление или кнопку обновления     
             h1.textContent = rut;
 
  const request = indexedDB.open('MyDatabse', 1);
