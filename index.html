@@ -39,6 +39,12 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+Notification.requestPermission().then(function(permission) {
+  if (permission === 'granted') {
+    new Notification('Заголовок', { body: 'Текст уведомления' });
+  }
+});
+            
       navigator.serviceWorker.addEventListener('message', event => console.log('Новый SW активирован'));
     // Можно показать уведомление или кнопку обновления     
             h1.textContent = rut;
