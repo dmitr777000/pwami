@@ -45,7 +45,7 @@ Notification.requestPermission().then(function(permission) {
   }
 });
             
-      navigator.serviceWorker.addEventListener('message', event => console.log(`Новый SW активирован ${event.data}  `));
+      navigator.serviceWorker.addEventListener('message', event => console.log(`из ада -  ${event.data}  `));
     // Можно показать уведомление или кнопку обновления     
             h1.textContent = rut;
 
